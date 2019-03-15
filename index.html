@@ -53,7 +53,7 @@
 
 <body class="bg-light">
     <nav class="navbar navbar-light bg-light d-flex flex-row-reverse">
-        <a class="navbar-text" href="https://github.com/ozonni/do-vpn">View on GitHub</a>
+        <a class="navbar-text" href="https://github.com/louim/do-vpn">View on GitHub</a>
     </nav>
     <main role="main" class="container" v-cloak id="app">
         <div class="py-4 text-center">
@@ -64,7 +64,7 @@
         <div>
             <div class="row justify-content-md-center">
                 <div class="col-md-8" v-if="!authorized">
-                    <a class="btn btn-primary btn-lg btn-block" href="https://cloud.digitalocean.com/v1/oauth/authorize?response_type=token&client_id=a74eb85bd3567014726fbf26a6f713cbf64c28224d5b838b8abbc9706fcec178&redirect_uri=https://ozonni.github.io/do-vpn/&scope=read write"
+                    <a class="btn btn-primary btn-lg btn-block" href="https://cloud.digitalocean.com/v1/oauth/authorize?response_type=token&client_id=a74eb85bd3567014726fbf26a6f713cbf64c28224d5b838b8abbc9706fcec178&redirect_uri=https://louim.github.io/do-vpn/&scope=read write"
                         role="button">{{ $t("message.authorize") }}</a>
                 </div>
                 <div class="col-md-10" v-if="authorized">
@@ -267,7 +267,7 @@ docker run --name ipsec-vpn-server -e VPN_IPSEC_PSK=${psk} -e VPN_USER=${usernam
                             name: name,
                             region: this.selectedRegion,
                             size: "s-1vcpu-1gb",
-                            image: "23219707",
+                            image: "ubuntu-18-04-x64",
                             tags: [name, "psk:" + psk, "username:" + username, "password:" + password],
                             user_data: userData
                         };
